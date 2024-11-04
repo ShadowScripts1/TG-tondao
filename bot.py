@@ -10,6 +10,11 @@ from core.ws import process_farm
 
 import time
 
+def create_custom_banner(title):
+    banner = f"""
+        {title}
+        """
+    return banner
 
 class TONxDAO:
     def __init__(self):
@@ -21,7 +26,8 @@ class TONxDAO:
         self.line = base.create_line(length=50)
 
         # Initialize banner
-        self.banner = base.create_banner(game_name="TONxDAO")
+        self.banner = create_custom_banner("Shadow Scripts Auto Claimer")
+        # self.banner = base.create_banner(game_name="Shadow Scripts")
 
         # Get config
         self.auto_check_in = base.get_config(
